@@ -15,7 +15,7 @@ class ScrapingEssentials(object):
     def __init__(self, source):
         ScrapingEssentials.number = 0
         self.source = source
-        file_path_string = "/Users/Admin/Documents/PinterestScraper-master/Crawler/" + source
+        file_path_string = "/Users/minhnguyen/Documents/Python_crawler_Pinterest/crawler" + source
         if not os.path.exists(file_path_string):
             os.makedirs(file_path_string)
     # Needed to make a class to have a static way of counting
@@ -25,6 +25,7 @@ class ScrapingEssentials(object):
     #Convert the file from a url to an actual image file and store it on the commputer
     def download_image(self, link):
         try:
+        
             done = False
             print("processing file: " + str(ScrapingEssentials.number))
             #Make a requests object
@@ -32,7 +33,7 @@ class ScrapingEssentials(object):
             folder_name = ScrapingEssentials.categories[ScrapingEssentials.currentItem]
             print(link)
             #Make the directory of the folder
-            file_path_string = "/Users/Admin/Documents/PinterestScraper-master/Crawler/" + self.source + "/" + folder_name
+            file_path_string = "/Users/minhnguyen/Documents/Python_crawler_Pinterest/crawler" + self.source + "/" + folder_name
             file_path = os.path.join(file_path_string, (str(ScrapingEssentials.number) + ".jpg"))
 
             if not os.path.exists(file_path_string):
@@ -49,6 +50,6 @@ class ScrapingEssentials(object):
 
     def english_pickle(self):
         ScrapingEssentials.categories = [
-            "Gái Xinh"
+            "Gái xinh"
         ]
         return ScrapingEssentials.categories
